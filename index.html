@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Tell us a bit about you.</p>
+	Please select your preferences:
+    <form id="dietSelect" name="dietSelect">
+      <input type="checkbox" name="Veg" value="Vegetarian" onclick="populateListProductChoices('this.id', 'displayProduct')"> Vegetarian<br>
+      <input type="checkbox" name="Glut" value="GlutenFree" onclick="populateListProductChoices('this.id', 'displayProduct')"> GlutenFree<br>
+      <input type="checkbox" name="Organic" value="Organic" onclick="populateListProductChoices('this.id', 'displayProduct')"> Organic<br>
+      <input type="checkbox" name="None" value="None" onclick="populateListProductChoices('this.id', 'displayProduct')">
+None<br>
+     
+    </form>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+	 Choose items to buy:
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div
+
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
