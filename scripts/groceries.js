@@ -169,13 +169,16 @@ function restrictListProducts(prods, restrictions) {
 function restrictListProducts2(prods, restriction) {
 	let product_names2 = [];
 	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Produce") && (prods[i].vegetarian == true)){
+		if ((restriction == "Produce") && (prods[i].type == "veg")){
 			product_names2.push(prods[i]);
 		}
-		else if ((restriction == "Meat") && (prods[i].vegetarian == false)){
+		else if ((restriction == "Meat") && (prods[i].type == "meat")){
 			product_names2.push(prods[i]);
 		}
-		else if (restriction == "Packaged Food"){
+		else if ((restriction == "Packaged Food") && (prods[i].type == "pack")){
+			product_names2.push(prods[i]);
+		}
+    else if (restriction == "All"){
 			product_names2.push(prods[i]);
 		}
 	}
