@@ -5,7 +5,7 @@
 
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
-
+var globalArray = []
 function populateListProductChoices(slct1, slct2) {
     var s1 = document.getElementById(slct1);
     var s2 = document.getElementById(slct2);
@@ -20,16 +20,26 @@ function populateListProductChoices(slct1, slct2) {
 
     for (var i = 0; i < checkboxes.length; i++) {
     array.push(checkboxes[i].value)
+   // add the product category to the array array.push(s1.value)
+
+}
+  var optionArray = restrictListProducts(products, array);
+  globalArray = optionArray
+    
 }
 
-  var optionArray = restrictListProducts(products, array);
+function populateListProductChoices2(slct1, slct2){
+    var s1 = document.getElementById(slct1);
+    var s2 = document.getElementById(slct2);
+     s2.innerHTML = "";
 
-console.log(optionArray)
 	// for each item in the array, create a checkbox element, each containing information such as:
+  var optionArray2 = restrictListProducts2(globalArray,s1.value)
+  
 
-	for (i = 0; i < optionArray.length; i++) {
-			
-    var productName = optionArray[i].name + " - $" + optionArray[i].price;
+
+	for (i = 0; i < optionArray2.length; i++) {
+    var productName = optionArray2[i].name + " - $" + optionArray2[i].price;
 
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
@@ -49,6 +59,7 @@ console.log(optionArray)
 	}
 }
 	
+ 
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
 // We build a paragraph to contain the list of selected items, and the total price
