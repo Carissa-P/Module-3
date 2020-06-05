@@ -7,21 +7,24 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 1.99
+		price: 1.99,
+    type: "veg",
 	},
 	{
 		name: "Bread",
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
-		price: 2.35
+		price: 2.35,
+    type: "pack", 
 	},
 	{
 		name: "Salmon",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
-		price: 10.00
+		price: 10.00,
+    type: "meat",
 	},
 	
 		{
@@ -29,7 +32,8 @@ var products = [
 		vegetarian: false,
 		glutenFree: false,
 		organic: false,
-		price: 12.99
+		price: 12.99,
+    type: "meat",
 	},
 	
 		{
@@ -37,19 +41,22 @@ var products = [
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 5.65
+		price: 5.65,
+    type: "pack", 
 	},
 		{
 		name: "Cookies",
 		vegetarian: true,
 		glutenFree: false,
-		price: 3.65
+		price: 3.65,
+    type: "pack", 
 	},
 		{
 		name: "Asparagus",
 		vegetarian: true,
 		glutenFree: true,
-		price: 2.99
+		price: 2.99,
+    type: "veg",
 	},
 	
 		{
@@ -57,49 +64,57 @@ var products = [
 		vegetarian: true,
 		glutenFree: false,
 		organic: true,
-		price: 6.99
+		price: 6.99,
+    type: "pack", 
 	},
 	{
 		name: "Organic Strawberries",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 3.99
+		price: 3.99,
+    type: "veg",
 	},
 	{
 		name: "Chicken",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
-		price: 10.00
+		price: 10.00,
+    type: "meat",
 	},
 	{
 		name: "Spinach",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 3.50
+		price: 3.50,
+    type: "veg",
 	},
 	{
 		name: "Spaghetti",
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
-		price: 1.99
+		price: 1.99,
+    type: "pack", 
+    
 	},
   	{
 		name: "Hamburgers",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
-		price: 12.70
+		price: 12.70,
+    type: "meat",
 	},
 	{
 		name: "Sunflower Seeds",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 4.75
+		price: 4.75,
+    type: "pack", 
 	}
 
 ];
@@ -118,6 +133,7 @@ function restrictListProducts(prods, restrictions) {
     }
 
     else if((restrictions.includes("Vegetarian"))&&(!restrictions.includes("GlutenFree"))&&(!restrictions.includes("Organic"))&&(prods[i].vegetarian == true)){
+      
       product_names.push(prods[i]);
     }
 
@@ -146,9 +162,27 @@ function restrictListProducts(prods, restrictions) {
     }
 
   }
-
   return product_names;
+  
 }
+
+function restrictListProducts2(prods, restriction) {
+	let product_names2 = [];
+	for (let i=0; i<prods.length; i+=1) {
+		if ((restriction == "Produce") && (prods[i].vegetarian == true)){
+			product_names2.push(prods[i]);
+		}
+		else if ((restriction == "Meat") && (prods[i].vegetarian == false)){
+			product_names2.push(prods[i]);
+		}
+		else if (restriction == "Packaged Food"){
+			product_names2.push(prods[i]);
+		}
+	}
+	return product_names2;
+}
+
+
 
 function compare(a, b) {
   if (a.price < b.price) return -1;
@@ -160,7 +194,6 @@ function compare(a, b) {
 // Calculate the total price of items, with received parameter being a list of products
 
 function getTotalPrice(chosenProducts) {
-  console.log(chosenProducts);
 
   totalPrice = 0;
   for (let i = 0; i < products.length; i += 1) {
