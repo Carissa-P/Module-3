@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
-	<link href="styles/style.css" rel="stylesheet" type="text/css">
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
 
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
+</head>
 <body>
 
-<!-- Tab content -->
-<div id="Client" class="tabcontent">
+
+<button class="accordion">Preferences</button>
+<div class="panel">
+
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
 	Please select your preferences:
@@ -18,38 +43,58 @@
       <input type="checkbox" name="Organic" value="Organic" onclick="populateListProductChoices('this.id', 'displayProduct')"> Organic<br>
       <input type="checkbox" name="None" value="None" onclick="populateListProductChoices('this.id', 'displayProduct')">
 None<br>
+
      
     </form>
 </div>
-<h3><b>Which category would you like to browse? </b></h2>
 
+<button class="accordion">Products</button>
+<div class="panel">
+  <h3>What product category would you like to browse?</h3>
 	<select id="dietSelect2" name="dietSelect2" onchange="populateListProductChoices2(this.id, 'displayProduct')">
 	<option value=""></option>
+    <option value="All">All</option>
     <option value="Produce">Produce</option>
     <option value="Packaged Food">Packaged Food</option>
     <option value="Meat">Meat</option>
 	</select>
 
-
-
-<div id="Products" class="tabcontent">
-  <h3>Your targeted products</h3>
+    <h3>Your targeted products</h3>
   <p>We preselected products based on your restrictions.</p>
 	 Choose items to buy:
 	 <div id="displayProduct"></div>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
 		Add selected items to cart.
 	</button>
+
+  <p></p>
 </div>
 
-
-
-
+<button class="accordion">Cart</button>
+<div class="panel">
 <div id="Cart" class="tabcontent">
   <h3>Cart</h3>
   <p>Here is your cart.</p>
   <div id="displayCart"></div>
 </div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 
 <script src="scripts/groceries.js"></script>
 <script src="scripts/main.js"></script>
