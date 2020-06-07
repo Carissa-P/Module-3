@@ -58,13 +58,13 @@ function populateListProductChoices2(slct1, slct2){
 		// create a breakline node and add in HTML DOM
 		s2.appendChild(document.createElement("br"));    
 
-        var img = document.createElement("IMG");
+        var product = document.createElement("IMG");
 		
-        img.setAttribute("src", "images/" + optionArray2[i].name + ".png")
-	img.setAttribute("height", "150");
-        img.setAttribute("width", "150");
+        product.setAttribute("src", "images/" + optionArray2[i].name + ".png")
+	product.setAttribute("height", "150");
+        product.setAttribute("width", "150");
 		
-        s2.appendChild(img);
+        s2.appendChild(product);
         console.log(optionArray2[i].name)
 	}
 }
