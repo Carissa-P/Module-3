@@ -3,7 +3,14 @@
 h1{
   font-size: 35px;
   text-align: center;
+}
+h2{
+   font-size: 15 px;
+    text-align: center;
+}
+header{
   background: rgba(0, 128, 0, 0.3);
+  padding: 20px;
 }
 .accordion {
   background-color: #eee;
@@ -37,4 +44,9 @@ h1{
   display: none;
   background-color: white;
   overflow: hidden;
+}
+body {
+
+  background-color:#ecf9ec;
+
 }
