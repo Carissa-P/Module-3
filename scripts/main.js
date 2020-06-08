@@ -1,8 +1,4 @@
-// This function is called when any of the tab is clicked
-// It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
-
-
-
+//Reference: Professor; https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery//
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 var globalArray = []
@@ -58,12 +54,13 @@ function populateListProductChoices2(slct1, slct2){
 		// create a breakline node and add in HTML DOM
 		s2.appendChild(document.createElement("br"));    
 
-        var img = document.createElement("IMG");
-        img.setAttribute("src", "images/" + optionArray2[i].name + ".png")
-        img.setAttribute("width", "100");
-        img.setAttribute("height", "100");
-        s2.appendChild(img);
-        console.log(optionArray2[i].name)
+        var prodImg = document.createElement("IMG");
+        prodImg.setAttribute("src", "images/" + optionArray2[i].name + ".png")
+	console.log(optionArray2[i].name)
+        prodImg.setAttribute("width", "150");
+        prodImg.setAttribute("height", "150");
+        s2.appendChild(prodImg);
+        
 	}
 }
 	
