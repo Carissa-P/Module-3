@@ -55,7 +55,7 @@ function populateListProductChoices2(slct1, slct2){
 		s2.appendChild(document.createElement("br"));    
 		
 	// REFERENCE: https://www.geeksforgeeks.org/how-to-create-an-image-element-dynamically-using-javascript/
-        var prodImg = document.createElement("image");
+        var prodImg = document.createElement("IMG");
         prodImg.setAttribute("src", "images/" + optionArray2[i].name + ".png")
 	console.log(optionArray2[i].name)
         prodImg.setAttribute("width", "150");
