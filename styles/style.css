@@ -12,6 +12,8 @@ header{
   background: rgba(0, 128, 0, 0.3);
   padding: 20px;
 }
+
+/*Reference: https://www.w3schools.com/howto/howto_js_accordion.asp*/
 .accordion {
   background-color: #eee;
   color: #444;
@@ -25,7 +27,7 @@ header{
   transition: 0.4s;
 }
 .accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  content: '\02795'; 
   font-size: 13px;
   color: #777;
   float: right;
@@ -33,7 +35,7 @@ header{
 }
 
 .active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  content: "\2796"; 
 }
 .active, .accordion:hover {
   background-color: #ccc; 
@@ -46,7 +48,17 @@ header{
   overflow: hidden;
 }
 body {
-
   background-color:#ecf9ec;
+}
+/* Reference : https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic*/
 
+button {
+  background-color: #b3e6b3; /* Green */
+  border: none;
+  color: #595959;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
