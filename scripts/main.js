@@ -16,8 +16,8 @@ function populateListProductChoices(slct1, slct2) {
 
     for (var i = 0; i < checkboxes.length; i++) {
     array.push(checkboxes[i].value)
-	    
    // add the product category to the array array.push(s1.value)
+
 }
   var optionArray = restrictListProducts(products, array);
   globalArray = optionArray
