@@ -1,5 +1,6 @@
 // Array of products, each product is an object with different fieldset
-// A set of ingredients should be added to products		 
+// A set of ingredients should be added to products		
+//Reference: Prof:https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery
 
 var products = [
 	{
@@ -185,7 +186,7 @@ function restrictListProducts2(prods, restriction) {
 	return product_names2;
 }
 
-
+// Sort the items by price - Reference https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
 
 function compare(a, b) {
   if (a.price < b.price) return -1;
