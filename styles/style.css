@@ -53,9 +53,8 @@ body {
 /* Reference : https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic*/
 
 button {
-  background-color: #b3e6b3; 
+  background-color: #ccc; 
   border: none;
-  color: #ccc;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
