@@ -53,9 +53,9 @@ body {
 /* Reference : https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_basic*/
 
 button {
-  background-color: #b3e6b3; /* Green */
+  background-color: #b3e6b3; 
   border: none;
-  color: #595959;
+  color: #ccc;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
