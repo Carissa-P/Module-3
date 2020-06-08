@@ -35,7 +35,7 @@ None<br>
 	
 <button class="accordion">2. Add Products</button>
 <div class="panel">
-  <h3>What product category would you like to browse?</h3>
+  <h3>Select a product category to browse?</h3>
 	<select id="dietSelect2" name="dietSelect2" onchange="populateListProductChoices2(this.id, 'displayProduct')">
 	<option value=""></option>
     <option value="All">All</option>
@@ -46,8 +46,9 @@ None<br>
 
     <h3>Your targeted products</h3>
   <p>Products based on your preferences.</p>
-	 Choose items to buy:
+	 Select items to buy:
 	 <div id="displayProduct"></div>
+	<br>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
 		Add selected items to cart.
 	</button>
